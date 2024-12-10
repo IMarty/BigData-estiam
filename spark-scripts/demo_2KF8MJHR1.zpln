@@ -1,0 +1,79 @@
+{
+  "paragraphs": [
+    {
+      "text": "%pyspark\nsales_data \u003d spark.read.option(\"header\", True).csv(\"hdfs://namenode:8020/sample_data/sales-data-sample.csv\")",
+      "user": "anonymous",
+      "dateUpdated": "2024-12-10 13:29:30.453",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "python",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/python",
+        "fontSize": 9.0,
+        "editorHide": false,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "ERROR",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "org.apache.zeppelin.interpreter.InterpreterException: org.apache.zeppelin.interpreter.InterpreterException: Fail to bootstrap pyspark\n\tat org.apache.zeppelin.interpreter.LazyOpenInterpreter.open(LazyOpenInterpreter.java:76)\n\tat org.apache.zeppelin.interpreter.remote.RemoteInterpreterServer$InterpretJob.jobRun(RemoteInterpreterServer.java:861)\n\tat org.apache.zeppelin.interpreter.remote.RemoteInterpreterServer$InterpretJob.jobRun(RemoteInterpreterServer.java:769)\n\tat org.apache.zeppelin.scheduler.Job.run(Job.java:186)\n\tat org.apache.zeppelin.scheduler.AbstractScheduler.runJob(AbstractScheduler.java:135)\n\tat org.apache.zeppelin.scheduler.FIFOScheduler.lambda$runJobInScheduler$0(FIFOScheduler.java:42)\n\tat java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)\n\tat java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)\n\tat java.lang.Thread.run(Thread.java:750)\nCaused by: org.apache.zeppelin.interpreter.InterpreterException: Fail to bootstrap pyspark\n\tat org.apache.zeppelin.spark.PySparkInterpreter.open(PySparkInterpreter.java:103)\n\tat org.apache.zeppelin.interpreter.LazyOpenInterpreter.open(LazyOpenInterpreter.java:70)\n\t... 8 more\nCaused by: java.io.IOException: Fail to run bootstrap script: python/zeppelin_pyspark.py\n"
+          },
+          {
+            "type": "TEXT",
+            "data": "Fail to execute line 21: from pyspark.conf import SparkConf\nTraceback (most recent call last):\n  File \"/tmp/python3866593883719090113/zeppelin_python.py\", line 162, in \u003cmodule\u003e\n    exec(code, _zcUserQueryNameSpace)\n  File \"\u003cstdin\u003e\", line 21, in \u003cmodule\u003e\n  File \"/opt/spark/spark-3.5.0-bin-hadoop3/python/pyspark/__init__.py\", line 75\n    def since(version: Union[str, float]) -\u003e Callable[[_F], _F]:\n                     ^\nSyntaxError: invalid syntax\n\n\tat org.apache.zeppelin.python.PythonInterpreter.bootstrapInterpreter(PythonInterpreter.java:574)\n\tat org.apache.zeppelin.spark.PySparkInterpreter.open(PySparkInterpreter.java:100)\n\t... 9 more\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1733836738716_1627915443",
+      "id": "paragraph_1733836738716_1627915443",
+      "dateCreated": "2024-12-10 13:18:58.716",
+      "dateStarted": "2024-12-10 13:29:30.521",
+      "dateFinished": "2024-12-10 13:30:10.574",
+      "status": "ERROR"
+    },
+    {
+      "text": "%pyspark\n",
+      "user": "anonymous",
+      "dateUpdated": "2024-12-10 13:23:29.914",
+      "progress": 0,
+      "config": {},
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1733837009911_1702289002",
+      "id": "paragraph_1733837009911_1702289002",
+      "dateCreated": "2024-12-10 13:23:29.913",
+      "status": "READY"
+    }
+  ],
+  "name": "demo",
+  "id": "2KF8MJHR1",
+  "defaultInterpreterGroup": "spark",
+  "version": "0.11.2",
+  "noteParams": {},
+  "noteForms": {},
+  "angularObjects": {},
+  "config": {
+    "isZeppelinNotebookCronEnable": false
+  },
+  "info": {}
+}

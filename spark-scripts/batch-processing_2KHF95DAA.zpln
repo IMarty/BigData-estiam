@@ -1,9 +1,9 @@
 {
   "paragraphs": [
     {
-      "text": "%pyspark\nsales_data \u003d spark.read.option(\"header\", True).csv(\"hdfs://namenode:8020/sample_data/sales-data-sample.csv\")",
+      "text": "%pyspark\n# Interpreteur Spark : org.apache.spark:spark-sql-kafka-0-10_2.12:3.5.0\t",
       "user": "anonymous",
-      "dateUpdated": "2024-12-10 18:29:38.556",
+      "dateUpdated": "2024-12-10 22:20:20.907",
       "progress": 0,
       "config": {
         "editorSetting": {
@@ -15,7 +15,36 @@
         "colWidth": 12.0,
         "editorMode": "ace/mode/python",
         "fontSize": 9.0,
-        "editorHide": false,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1733869201424_2095816114",
+      "id": "paragraph_1733869201424_2095816114",
+      "dateCreated": "2024-12-10 22:20:01.425",
+      "status": "READY"
+    },
+    {
+      "text": "%pyspark\nweather_data \u003d spark.read.option(\"header\", True).option(\"delimiter\", \";\").csv(\"hdfs://namenode:8020/sample_data/paris_2.csv\")",
+      "user": "anonymous",
+      "dateUpdated": "2024-12-10 22:21:22.517",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "python",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/python",
+        "fontSize": 9.0,
         "results": {},
         "enabled": true
       },
@@ -36,127 +65,24 @@
           "group": "spark",
           "values": [
             {
-              "jobUrl": "http://namenode:4040/jobs/job?id\u003d0"
+              "jobUrl": "http://namenode:4042/jobs/job?id\u003d0"
             }
           ],
           "interpreterSettingId": "spark"
         }
       },
       "progressUpdateIntervalMs": 500,
-      "jobName": "paragraph_1733836738716_1627915443",
-      "id": "paragraph_1733836738716_1627915443",
-      "dateCreated": "2024-12-10 13:18:58.716",
-      "dateStarted": "2024-12-10 18:29:38.595",
-      "dateFinished": "2024-12-10 18:29:43.635",
-      "status": "FINISHED"
-    },
-    {
-      "text": "%pyspark\nsales_data.show()",
-      "user": "anonymous",
-      "dateUpdated": "2024-12-10 18:29:48.312",
-      "progress": 0,
-      "config": {
-        "colWidth": 12.0,
-        "fontSize": 9.0,
-        "enabled": true,
-        "results": {},
-        "editorSetting": {
-          "language": "scala",
-          "editOnDblClick": false,
-          "completionKey": "TAB",
-          "completionSupport": true
-        },
-        "editorMode": "ace/mode/scala"
-      },
-      "settings": {
-        "params": {},
-        "forms": {}
-      },
-      "results": {
-        "code": "SUCCESS",
-        "msg": [
-          {
-            "type": "TEXT",
-            "data": "+--------------------+---------------+------------+-------------+----------------+--------+--------------+----------+--------------------+------+--------+-------+-----+-----------+--------------------+--------------+------------+------------+----------------+-------------+---------------+-------------------+---------------+----------------+-----------+----------------+--------+---------+\n|           OrderDate|       Category|        City|      Country|    CustomerName|Discount|       OrderID|PostalCode|         ProductName|Profit|Quantity| Region|Sales|    Segment|            ShipDate|      ShipMode|       State|Sub_Category|DaystoShipActual|SalesForecast|     ShipStatus|DaystoShipScheduled|OrderProfitable|SalesperCustomer|ProfitRatio|SalesaboveTarget|latitude|longitude|\n+--------------------+---------------+------------+-------------+----------------+--------+--------------+----------+--------------------+------+--------+-------+-----+-----------+--------------------+--------------+------------+------------+----------------+-------------+---------------+-------------------+---------------+----------------+-----------+----------------+--------+---------+\n|2011-01-04T00:00:...|Office Supplies|     Houston|United States|   Darren Powers|     0.2|CA-2011-103800|     77095|Message Book, Wir...|     6|       2|Central|   16|   Consumer|2011-01-08T00:00:...|Standard Class|       Texas|       Paper|               4|           22|  Shipped Early|                  6|           null|           16.45|       33.8|            null| 29.8941| -95.6481|\n|2011-01-05T00:00:...|Office Supplies|  Naperville|United States|   Phillina Ober|     0.2|CA-2011-112326|     60540|           Avery 508|     4|       3|Central|   12|Home Office|2011-01-09T00:00:...|Standard Class|    Illinois|      Labels|               4|           15|  Shipped Early|                  6|           null|           11.78|       36.3|            null| 41.7662|  -88.141|\n|2011-01-05T00:00:...|Office Supplies|  Naperville|United States|   Phillina Ober|     0.8|CA-2011-112326|     60540|GBC Standard Plas...|    -5|       2|Central|    4|Home Office|2011-01-09T00:00:...|Standard Class|    Illinois|     Binders|               4|            5|  Shipped Early|                  6|           null|            3.54|     -155.0|            null| 41.7662|  -88.141|\n|2011-01-05T00:00:...|Office Supplies|  Naperville|United States|   Phillina Ober|     0.2|CA-2011-112326|     60540|SAFCO Boltless St...|   -65|       3|Central|  273|Home Office|2011-01-09T00:00:...|Standard Class|    Illinois|     Storage|               4|          357|  Shipped Early|                  6|           null|          272.74|      -23.8|            null| 41.7662|  -88.141|\n|2011-01-06T00:00:...|Office Supplies|Philadelphia|United States|      Mick Brown|     0.2|CA-2011-141817|     19143|Avery Hi-Liter Ev...|     5|       3|   East|   20|   Consumer|2011-01-13T00:00:...|Standard Class|Pennsylvania|         Art|               7|           26|   Shipped Late|                  6|           null|           19.54|       25.0|            null| 39.9448| -75.2288|\n|2011-01-07T00:00:...|      Furniture|   Henderson|United States|   Maria Etezadi|     0.0|CA-2011-167199|     42420|Global Deluxe Hig...|   746|       9|  South| 2574|Home Office|2011-01-11T00:00:...|Standard Class|    Kentucky|      Chairs|               4|         3373|  Shipped Early|                  6|           null|         2573.82|       29.0|            null| 37.8274| -87.5632|\n|2011-01-07T00:00:...|Office Supplies|      Athens|United States|    Jack OBriant|     0.0|CA-2011-106054|     30605|Dixon Prang Water...|     5|       3|  South|   13|  Corporate|2011-01-08T00:00:...|   First Class|     Georgia|         Art|               1|           17|Shipped On Time|                  1|           null|           12.78|       41.0|            null| 33.9321| -83.3525|\n|2011-01-07T00:00:...|Office Supplies|   Henderson|United States|   Maria Etezadi|     0.0|CA-2011-167199|     42420|Alliance Super-Si...|     0|       4|  South|   31|Home Office|2011-01-11T00:00:...|Standard Class|    Kentucky|   Fasteners|               4|           41|  Shipped Early|                  6|           null|           31.12|        1.0|            null| 37.8274| -87.5632|\n|2011-01-07T00:00:...|Office Supplies|   Henderson|United States|   Maria Etezadi|     0.0|CA-2011-167199|     42420|Ibico Hi-Tech Man...|   274|       2|  South|  610|Home Office|2011-01-11T00:00:...|Standard Class|    Kentucky|     Binders|               4|          799|  Shipped Early|                  6|           null|          609.98|       45.0|            null| 37.8274| -87.5632|\n|2011-01-07T00:00:...|Office Supplies|   Henderson|United States|   Maria Etezadi|     0.0|CA-2011-167199|     42420|Rogers Handheld B...|     1|       2|  South|    5|Home Office|2011-01-11T00:00:...|Standard Class|    Kentucky|         Art|               4|            7|  Shipped Early|                  6|           null|            5.48|       27.0|            null| 37.8274| -87.5632|\n|2011-01-07T00:00:...|Office Supplies|   Henderson|United States|   Maria Etezadi|     0.0|CA-2011-167199|     42420|Southworth 25% Co...|     3|       1|  South|    7|Home Office|2011-01-11T00:00:...|Standard Class|    Kentucky|       Paper|               4|            9|  Shipped Early|                  6|           null|            6.54|       46.0|            null| 37.8274| -87.5632|\n|2011-01-07T00:00:...|Office Supplies| Los Angeles|United States|Lycoris Saunders|     0.0|CA-2011-130813|     90049|           Xerox 225|     9|       3|   West|   19|   Consumer|2011-01-09T00:00:...|  Second Class|  California|       Paper|               2|           25|  Shipped Early|                  3|           null|           19.44|       48.0|            null|  34.066| -118.474|\n|2011-01-07T00:00:...|     Technology|   Henderson|United States|   Maria Etezadi|     0.0|CA-2011-167199|     42420|         GE 30524EE4|   114|       2|  South|  392|Home Office|2011-01-11T00:00:...|Standard Class|    Kentucky|      Phones|               4|          514|  Shipped Early|                  6|           null|          391.98|       29.0|            null| 37.8274| -87.5632|\n|2011-01-07T00:00:...|     Technology|   Henderson|United States|   Maria Etezadi|     0.0|CA-2011-167199|     42420|Wireless Extender...|   204|       4|  South|  756|Home Office|2011-01-11T00:00:...|Standard Class|    Kentucky|      Phones|               4|          991|  Shipped Early|                  6|           null|          755.96|       27.0|            null| 37.8274| -87.5632|\n|2011-01-08T00:00:...|      Furniture|  Huntsville|United States|Vivek Sundaresam|     0.6|CA-2011-105417|     77340|Howard Miller 14-...|   -54|       3|Central|   77|   Consumer|2011-01-13T00:00:...|Standard Class|       Texas| Furnishings|               5|          101|  Shipped Early|                  6|           null|           76.73|      -70.0|            null| 30.6448| -95.5798|\n|2011-01-08T00:00:...|Office Supplies|  Huntsville|United States|Vivek Sundaresam|     0.8|CA-2011-105417|     77340|Acco Four Pocket ...|   -18|       7|Central|   10|   Consumer|2011-01-13T00:00:...|Standard Class|       Texas|     Binders|               5|           14|  Shipped Early|                  6|           null|           10.43|     -175.0|            null| 30.6448| -95.5798|\n|2011-01-10T00:00:...|Office Supplies|      Laredo|United States|   Melanie Seite|     0.2|CA-2011-135405|     78041|          Newell 312|     1|       2|Central|    9|   Consumer|2011-01-14T00:00:...|Standard Class|       Texas|         Art|               4|           12|  Shipped Early|                  6|           null|            9.34|       12.5|            null| 27.5569| -99.4907|\n|2011-01-10T00:00:...|     Technology|      Laredo|United States|   Melanie Seite|     0.2|CA-2011-135405|     78041|Memorex Micro Tra...|    10|       3|Central|   31|   Consumer|2011-01-14T00:00:...|Standard Class|       Texas| Accessories|               4|           41|  Shipped Early|                  6|           null|            31.2|       31.3|            null| 27.5569| -99.4907|\n|2011-01-11T00:00:...|      Furniture| Springfield|United States|  Anthony Jacobs|     0.0|CA-2011-149020|     22153|Howard Miller 11-...|    21|       1|  South|   52|  Corporate|2011-01-16T00:00:...|Standard Class|    Virginia| Furnishings|               5|           68|  Shipped Early|                  6|           null|           51.94|       41.0|            null| 38.7449|  -77.237|\n|2011-01-11T00:00:...|Office Supplies| Springfield|United States|  Anthony Jacobs|     0.0|CA-2011-149020|     22153|           Avery 482|     1|       1|  South|    3|  Corporate|2011-01-16T00:00:...|Standard Class|    Virginia|      Labels|               5|            4|  Shipped Early|                  6|           null|            2.89|       47.0|            null| 38.7449|  -77.237|\n+--------------------+---------------+------------+-------------+----------------+--------+--------------+----------+--------------------+------+--------+-------+-----+-----------+--------------------+--------------+------------+------------+----------------+-------------+---------------+-------------------+---------------+----------------+-----------+----------------+--------+---------+\nonly showing top 20 rows\n\n"
-          }
-        ]
-      },
-      "apps": [],
-      "runtimeInfos": {
-        "jobUrl": {
-          "propertyName": "jobUrl",
-          "label": "SPARK JOB",
-          "tooltip": "View in Spark web UI",
-          "group": "spark",
-          "values": [
-            {
-              "jobUrl": "http://namenode:4040/jobs/job?id\u003d1"
-            }
-          ],
-          "interpreterSettingId": "spark"
-        }
-      },
-      "progressUpdateIntervalMs": 500,
-      "jobName": "paragraph_1733838368953_2035766377",
-      "id": "paragraph_1733838368953_2035766377",
-      "dateCreated": "2024-12-10 13:46:08.953",
-      "dateStarted": "2024-12-10 18:29:48.329",
-      "dateFinished": "2024-12-10 18:29:50.108",
-      "status": "FINISHED"
-    },
-    {
-      "text": "%pyspark\nweather_data \u003d spark.read.option(\"header\", True).option(\"delimiter\", \";\").csv(\"hdfs://namenode:8020/sample_data/paris_2.csv\")",
-      "user": "anonymous",
-      "dateUpdated": "2024-12-10 20:56:51.384",
-      "progress": 0,
-      "config": {
-        "colWidth": 12.0,
-        "fontSize": 9.0,
-        "enabled": true,
-        "results": {},
-        "editorSetting": {
-          "language": "scala",
-          "editOnDblClick": false,
-          "completionKey": "TAB",
-          "completionSupport": true
-        },
-        "editorMode": "ace/mode/scala"
-      },
-      "settings": {
-        "params": {},
-        "forms": {}
-      },
-      "results": {
-        "code": "SUCCESS",
-        "msg": []
-      },
-      "apps": [],
-      "runtimeInfos": {
-        "jobUrl": {
-          "propertyName": "jobUrl",
-          "label": "SPARK JOB",
-          "tooltip": "View in Spark web UI",
-          "group": "spark",
-          "values": [
-            {
-              "jobUrl": "http://namenode:4040/jobs/job?id\u003d9"
-            }
-          ],
-          "interpreterSettingId": "spark"
-        }
-      },
-      "progressUpdateIntervalMs": 500,
-      "jobName": "paragraph_1733838367920_1331262777",
-      "id": "paragraph_1733838367920_1331262777",
-      "dateCreated": "2024-12-10 13:46:07.920",
-      "dateStarted": "2024-12-10 20:56:51.409",
-      "dateFinished": "2024-12-10 20:56:52.315",
+      "jobName": "paragraph_1733868814512_1482366340",
+      "id": "paragraph_1733868814512_1482366340",
+      "dateCreated": "2024-12-10 22:13:34.513",
+      "dateStarted": "2024-12-10 22:21:22.550",
+      "dateFinished": "2024-12-10 22:21:29.410",
       "status": "FINISHED"
     },
     {
       "text": "%pyspark\nweather_data.show()",
       "user": "anonymous",
-      "dateUpdated": "2024-12-10 20:56:53.194",
+      "dateUpdated": "2024-12-10 22:14:20.591",
       "progress": 0,
       "config": {
         "editorSetting": {
@@ -193,78 +119,37 @@
           "group": "spark",
           "values": [
             {
-              "jobUrl": "http://namenode:4040/jobs/job?id\u003d10"
+              "jobUrl": "http://namenode:4042/jobs/job?id\u003d18"
             }
           ],
           "interpreterSettingId": "spark"
         }
       },
       "progressUpdateIntervalMs": 500,
-      "jobName": "paragraph_1733863975220_659749522",
-      "id": "paragraph_1733863975220_659749522",
-      "dateCreated": "2024-12-10 20:52:55.221",
-      "dateStarted": "2024-12-10 20:56:53.207",
-      "dateFinished": "2024-12-10 20:56:54.694",
+      "jobName": "paragraph_1733868848853_829181011",
+      "id": "paragraph_1733868848853_829181011",
+      "dateCreated": "2024-12-10 22:14:08.859",
+      "dateStarted": "2024-12-10 22:14:20.609",
+      "dateFinished": "2024-12-10 22:14:22.672",
       "status": "FINISHED"
     },
     {
-      "text": "%spark.pyspark\nimport sys\nprint(sys.version)",
+      "text": "%pyspark\n# Convert necessary columns to appropriate data types\nfrom pyspark.sql.functions import col\n\nweather_data \u003d weather_data.withColumn(\"AAAAMM\", col(\"AAAAMM\").cast(\"int\")) \\\n                       .withColumn(\"TX\", col(\"TX\").cast(\"float\"))\n\n# Filter for December data (where AAAAMM ends with 12)\ndecember_data \u003d weather_data.filter((col(\"AAAAMM\") % 100) \u003d\u003d 12)\n\n# Calculate the average temperature (TX)\naverage_tx \u003d december_data.selectExpr(\"AVG(TX) as average_tx\").collect()[0][\"average_tx\"]\n\nprint(f\"Average temperature in December: {average_tx}\")",
       "user": "anonymous",
-      "dateUpdated": "2024-12-10 18:28:06.322",
+      "dateUpdated": "2024-12-10 22:21:30.194",
       "progress": 0,
       "config": {
-        "colWidth": 12.0,
-        "fontSize": 9.0,
-        "enabled": true,
-        "results": {},
         "editorSetting": {
           "language": "python",
           "editOnDblClick": false,
           "completionKey": "TAB",
           "completionSupport": true
         },
-        "editorMode": "ace/mode/python"
-      },
-      "settings": {
-        "params": {},
-        "forms": {}
-      },
-      "results": {
-        "code": "SUCCESS",
-        "msg": [
-          {
-            "type": "TEXT",
-            "data": "3.6.8 (default, Nov 14 2023, 16:29:52) \n[GCC 4.8.5 20150623 (Red Hat 4.8.5-44)]\n"
-          }
-        ]
-      },
-      "apps": [],
-      "runtimeInfos": {},
-      "progressUpdateIntervalMs": 500,
-      "jobName": "paragraph_1733837009911_1702289002",
-      "id": "paragraph_1733837009911_1702289002",
-      "dateCreated": "2024-12-10 13:23:29.913",
-      "dateStarted": "2024-12-10 18:28:06.345",
-      "dateFinished": "2024-12-10 18:28:06.468",
-      "status": "FINISHED"
-    },
-    {
-      "text": "%pyspark\n# Convert necessary columns to appropriate data types\nfrom pyspark.sql.functions import col\n\nweather_data \u003d weather_data.withColumn(\"AAAAMM\", col(\"AAAAMM\").cast(\"int\")) \\\n                       .withColumn(\"TX\", col(\"TX\").cast(\"float\"))\n\n# Filter for December data (where AAAAMM ends with 12)\ndecember_data \u003d weather_data.filter((col(\"AAAAMM\") % 100) \u003d\u003d 12)\n\n# Calculate the average temperature (TX)\naverage_tx \u003d december_data.selectExpr(\"AVG(TX) as average_tx\").collect()[0][\"average_tx\"]\n\nprint(f\"Average temperature in December: {average_tx}\")",
-      "user": "anonymous",
-      "dateUpdated": "2024-12-10 20:56:58.355",
-      "progress": 0,
-      "config": {
         "colWidth": 12.0,
+        "editorMode": "ace/mode/python",
         "fontSize": 9.0,
-        "enabled": true,
         "results": {},
-        "editorSetting": {
-          "language": "scala",
-          "editOnDblClick": false,
-          "completionKey": "TAB",
-          "completionSupport": true
-        },
-        "editorMode": "ace/mode/scala"
+        "enabled": true
       },
       "settings": {
         "params": {},
@@ -288,149 +173,27 @@
           "group": "spark",
           "values": [
             {
-              "jobUrl": "http://namenode:4040/jobs/job?id\u003d11"
+              "jobUrl": "http://namenode:4042/jobs/job?id\u003d1"
             },
             {
-              "jobUrl": "http://namenode:4040/jobs/job?id\u003d12"
+              "jobUrl": "http://namenode:4042/jobs/job?id\u003d2"
             }
           ],
           "interpreterSettingId": "spark"
         }
       },
       "progressUpdateIntervalMs": 500,
-      "jobName": "paragraph_1733838380844_1480372258",
-      "id": "paragraph_1733838380844_1480372258",
-      "dateCreated": "2024-12-10 13:46:20.844",
-      "dateStarted": "2024-12-10 20:56:58.375",
-      "dateFinished": "2024-12-10 20:57:01.809",
+      "jobName": "paragraph_1733868860608_319853015",
+      "id": "paragraph_1733868860608_319853015",
+      "dateCreated": "2024-12-10 22:14:20.608",
+      "dateStarted": "2024-12-10 22:21:30.223",
+      "dateFinished": "2024-12-10 22:21:34.256",
       "status": "FINISHED"
     },
     {
-      "text": "%spark.pyspark\n\nfrom pyspark.sql import SparkSession\n\n# Define Kafka broker and topic\nkafka_broker \u003d \"kafka:9092\"\nkafka_topic \u003d \"test_topic\"\n\n# Initialize Spark Session\nspark \u003d SparkSession.builder \\\n    .appName(\"KafkaSparkMVP\") \\\n    .getOrCreate()\n\n# Read messages from Kafka\nkafka_stream \u003d spark.readStream \\\n    .format(\"kafka\") \\\n    .option(\"kafka.bootstrap.servers\", kafka_broker) \\\n    .option(\"subscribe\", kafka_topic) \\\n    .option(\"startingOffsets\", \"latest\") \\\n    .load()\n\n# Extract and log the Kafka message value\nmessages \u003d kafka_stream.selectExpr(\"CAST(value AS STRING) as message\")\n\n# Write the messages to console\nquery \u003d messages.withWatermark(\"timestampColumn\", \"3 minutes\") \\\n    .writeStream \\\n    .outputMode(\"append\") \\\n    .format(\"console\") \\\n    .start()\n\n# Wait for termination\nquery.awaitTermination()\n",
+      "text": "%spark.pyspark\n\nfrom pyspark.sql import SparkSession\n\n# Kafka broker and topic\nkafka_broker \u003d \"kafka:9092\"\nkafka_topic \u003d \"test_topic\"\n\n# Initialize Spark Session\nspark \u003d SparkSession.builder \\\n    .appName(\"KafkaSparkMemorySink\") \\\n    .getOrCreate()\n\n# Read data from Kafka topic\nkafka_stream \u003d spark.readStream \\\n    .format(\"kafka\") \\\n    .option(\"kafka.bootstrap.servers\", kafka_broker) \\\n    .option(\"subscribe\", kafka_topic) \\\n    .option(\"startingOffsets\", \"latest\") \\\n    .load()\n\n# Select message value and convert to string\nmessages \u003d kafka_stream.selectExpr(\"CAST(value AS STRING) as message\")\n\n# Write to memory sink\nquery \u003d messages.writeStream \\\n    .outputMode(\"append\") \\\n    .format(\"memory\") \\\n    .queryName(\"kafka_messages\") \\\n    .start()\n\n# Simulate processing\nimport time\nprint(\"Streaming started... Run the following to view data:\")\nprint(\"spark.sql(\u0027SELECT * FROM kafka_messages\u0027).show()\")\n\n# Let the stream run indefinitely\ntry:\n    while True:\n        time.sleep(10)\n        spark.sql(\"SELECT * FROM kafka_messages\").show(truncate\u003dFalse)\nexcept KeyboardInterrupt:\n    print(\"Stream stopped.\")\n    query.stop()    ",
       "user": "anonymous",
-      "dateUpdated": "2024-12-10 21:23:58.447",
-      "progress": 0,
-      "config": {
-        "editorSetting": {
-          "language": "python",
-          "editOnDblClick": false,
-          "completionKey": "TAB",
-          "completionSupport": true
-        },
-        "colWidth": 12.0,
-        "editorMode": "ace/mode/python",
-        "fontSize": 9.0,
-        "results": {},
-        "enabled": true
-      },
-      "settings": {
-        "params": {},
-        "forms": {}
-      },
-      "apps": [],
-      "runtimeInfos": {},
-      "progressUpdateIntervalMs": 500,
-      "jobName": "paragraph_1733865634863_1678333932",
-      "id": "paragraph_1733865634863_1678333932",
-      "dateCreated": "2024-12-10 21:20:34.866",
-      "dateStarted": "2024-12-10 21:23:58.465",
-      "dateFinished": "2024-12-10 21:23:33.539",
-      "status": "ABORT"
-    },
-    {
-      "text": "%spark.pyspark\n\nfrom pyspark.sql import SparkSession\nfrom pyspark.sql.types import StructType, StructField, StringType, DoubleType, TimestampType\nfrom pyspark.sql.functions import from_json, col, to_timestamp\n\nkafka_broker \u003d \"kafka:9092\"\nkafka_topic \u003d \"test_topic\"\n\nspark \u003d SparkSession.builder \\\n    .appName(\"KafkaSparkStreaming\") \\\n    .getOrCreate()\n\nschema \u003d StructType([\n    StructField(\"temperature\", DoubleType(), True),\n    StructField(\"timestamp\", DoubleType(), True),\n    StructField(\"city\", StringType(), True)\n])\n\nkafka_stream \u003d spark.readStream \\\n    .format(\"kafka\") \\\n    .option(\"kafka.bootstrap.servers\", kafka_broker) \\\n    .option(\"subscribe\", kafka_topic) \\\n    .option(\"startingOffsets\", \"latest\") \\\n    .load()\n\nparsed_stream \u003d kafka_stream.selectExpr(\"CAST(value AS STRING) as json\") \\\n    .select(from_json(col(\"json\"), schema).alias(\"data\")) \\\n    .select(\n        col(\"data.temperature\").alias(\"temperature\"),\n        to_timestamp((col(\"data.timestamp\") / 1000)).alias(\"timestamp\"),\n        col(\"data.city\").alias(\"city\")\n    )\n\nquery \u003d parsed_stream.writeStream \\\n    .outputMode(\"append\") \\\n    .format(\"console\") \\\n    .start()\n\nquery.awaitTermination()\n",
-      "user": "anonymous",
-      "dateUpdated": "2024-12-10 21:13:10.288",
-      "progress": 0,
-      "config": {
-        "editorSetting": {
-          "language": "python",
-          "editOnDblClick": false,
-          "completionKey": "TAB",
-          "completionSupport": true
-        },
-        "colWidth": 12.0,
-        "editorMode": "ace/mode/python",
-        "fontSize": 9.0,
-        "results": {},
-        "enabled": true
-      },
-      "settings": {
-        "params": {},
-        "forms": {}
-      },
-      "results": {
-        "code": "ERROR",
-        "msg": [
-          {
-            "type": "TEXT",
-            "data": "ERROR:root:KeyboardInterrupt while sending command.\nTraceback (most recent call last):\n  File \"/opt/spark/spark-3.5.0-bin-hadoop3/python/lib/py4j-0.10.9.7-src.zip/py4j/java_gateway.py\", line 1038, in send_command\n    response \u003d connection.send_command(command)\n  File \"/opt/spark/spark-3.5.0-bin-hadoop3/python/lib/py4j-0.10.9.7-src.zip/py4j/java_gateway.py\", line 1217, in send_command\n    answer \u003d smart_decode(self.stream.readline()[:-1])\n  File \"/usr/lib64/python3.6/socket.py\", line 586, in readinto\n    return self._sock.recv_into(b)\n  File \"/opt/spark/spark-3.5.0-bin-hadoop3/python/pyspark/context.py\", line 382, in signal_handler\n    raise KeyboardInterrupt()\nKeyboardInterrupt\n"
-          },
-          {
-            "type": "TEXT",
-            "data": "Fail to execute line 40: query.awaitTermination()\nTraceback (most recent call last):\n  File \"/tmp/python2877662695313556370/zeppelin_python.py\", line 167, in \u003cmodule\u003e\n    exec(code, _zcUserQueryNameSpace)\n  File \"\u003cstdin\u003e\", line 40, in \u003cmodule\u003e\n  File \"/opt/spark/spark-3.5.0-bin-hadoop3/python/pyspark/sql/streaming/query.py\", line 221, in awaitTermination\n    return self._jsq.awaitTermination()\n  File \"/opt/spark/spark-3.5.0-bin-hadoop3/python/lib/py4j-0.10.9.7-src.zip/py4j/java_gateway.py\", line 1321, in __call__\n    answer \u003d self.gateway_client.send_command(command)\n  File \"/opt/spark/spark-3.5.0-bin-hadoop3/python/lib/py4j-0.10.9.7-src.zip/py4j/java_gateway.py\", line 1038, in send_command\n    response \u003d connection.send_command(command)\n  File \"/opt/spark/spark-3.5.0-bin-hadoop3/python/lib/py4j-0.10.9.7-src.zip/py4j/java_gateway.py\", line 1217, in send_command\n    answer \u003d smart_decode(self.stream.readline()[:-1])\n  File \"/usr/lib64/python3.6/socket.py\", line 586, in readinto\n    return self._sock.recv_into(b)\n  File \"/opt/spark/spark-3.5.0-bin-hadoop3/python/pyspark/context.py\", line 382, in signal_handler\n    raise KeyboardInterrupt()\nKeyboardInterrupt\n"
-          }
-        ]
-      },
-      "apps": [],
-      "runtimeInfos": {},
-      "progressUpdateIntervalMs": 500,
-      "jobName": "paragraph_1733855596376_519047015",
-      "id": "paragraph_1733855596376_519047015",
-      "dateCreated": "2024-12-10 18:33:16.378",
-      "dateStarted": "2024-12-10 21:13:10.304",
-      "dateFinished": "2024-12-10 21:18:17.053",
-      "status": "ABORT"
-    },
-    {
-      "text": "%pyspark\nfrom pyspark.sql import SparkSession\nfrom pyspark.sql.functions import from_json\nfrom pyspark.sql.types import StructType, StringType\n\nspark \u003d SparkSession \\\n    .builder \\\n    .appName(\"PysparkTesting\") \\\n    .getOrCreate()\n\nspark.sparkContext.setLogLevel(\u0027WARN\u0027)\n\nschema \u003d StructType().add(\"changeType\", StringType())\n\nstream_data \u003d spark \\\n    .readStream \\\n    .format(\"kafka\") \\\n    .option(\"kafka.bootstrap.servers\", \"kafka:9092\") \\\n    .option(\"subscribe\", \"test_topic\") \\\n    .load()\n\n\nparsed_data \u003d stream_data.selectExpr(\"CAST(value as STRING)\") \\\n    .select(from_json(\"value\", schema).alias(\"data\")) \\\n    .select(\"data.changeType\")\n\nquery \u003d parsed_data.writeStream \\\n          .outputMode(\"append\") \\\n          .format(\"console\") \\\n          .start()\n\nquery.awaitTermination()",
-      "user": "anonymous",
-      "dateUpdated": "2024-12-10 21:35:38.594",
-      "progress": 0,
-      "config": {
-        "editorSetting": {
-          "language": "python",
-          "editOnDblClick": false,
-          "completionKey": "TAB",
-          "completionSupport": true
-        },
-        "colWidth": 12.0,
-        "editorMode": "ace/mode/python",
-        "fontSize": 9.0,
-        "results": {},
-        "enabled": true
-      },
-      "settings": {
-        "params": {},
-        "forms": {}
-      },
-      "results": {
-        "code": "ERROR",
-        "msg": [
-          {
-            "type": "TEXT",
-            "data": "ERROR:root:KeyboardInterrupt while sending command.\nTraceback (most recent call last):\n  File \"/opt/spark/spark-3.5.0-bin-hadoop3/python/lib/py4j-0.10.9.7-src.zip/py4j/java_gateway.py\", line 1038, in send_command\n    response \u003d connection.send_command(command)\n  File \"/opt/spark/spark-3.5.0-bin-hadoop3/python/lib/py4j-0.10.9.7-src.zip/py4j/java_gateway.py\", line 1217, in send_command\n    answer \u003d smart_decode(self.stream.readline()[:-1])\n  File \"/usr/lib64/python3.6/socket.py\", line 586, in readinto\n    return self._sock.recv_into(b)\n  File \"/opt/spark/spark-3.5.0-bin-hadoop3/python/pyspark/context.py\", line 382, in signal_handler\n    raise KeyboardInterrupt()\nKeyboardInterrupt\n"
-          },
-          {
-            "type": "TEXT",
-            "data": "Fail to execute line 32: query.awaitTermination()\nTraceback (most recent call last):\n  File \"/tmp/python7536216512188495525/zeppelin_python.py\", line 167, in \u003cmodule\u003e\n    exec(code, _zcUserQueryNameSpace)\n  File \"\u003cstdin\u003e\", line 32, in \u003cmodule\u003e\n  File \"/opt/spark/spark-3.5.0-bin-hadoop3/python/pyspark/sql/streaming/query.py\", line 221, in awaitTermination\n    return self._jsq.awaitTermination()\n  File \"/opt/spark/spark-3.5.0-bin-hadoop3/python/lib/py4j-0.10.9.7-src.zip/py4j/java_gateway.py\", line 1321, in __call__\n    answer \u003d self.gateway_client.send_command(command)\n  File \"/opt/spark/spark-3.5.0-bin-hadoop3/python/lib/py4j-0.10.9.7-src.zip/py4j/java_gateway.py\", line 1038, in send_command\n    response \u003d connection.send_command(command)\n  File \"/opt/spark/spark-3.5.0-bin-hadoop3/python/lib/py4j-0.10.9.7-src.zip/py4j/java_gateway.py\", line 1217, in send_command\n    answer \u003d smart_decode(self.stream.readline()[:-1])\n  File \"/usr/lib64/python3.6/socket.py\", line 586, in readinto\n    return self._sock.recv_into(b)\n  File \"/opt/spark/spark-3.5.0-bin-hadoop3/python/pyspark/context.py\", line 382, in signal_handler\n    raise KeyboardInterrupt()\nKeyboardInterrupt\n"
-          }
-        ]
-      },
-      "apps": [],
-      "runtimeInfos": {},
-      "progressUpdateIntervalMs": 500,
-      "jobName": "paragraph_1733864597168_1726194337",
-      "id": "paragraph_1733864597168_1726194337",
-      "dateCreated": "2024-12-10 21:03:17.171",
-      "dateStarted": "2024-12-10 21:35:38.641",
-      "dateFinished": "2024-12-10 21:59:38.411",
-      "status": "ABORT"
-    },
-    {
-      "text": "%pyspark\nfrom pyspark.sql import SparkSession\nfrom pyspark.sql.functions import from_json, col, window\nfrom pyspark.sql.types import StructType, StructField, StringType, DoubleType, TimestampType\n\ndef check_temperature(temp):\n    # Placeholder logic for seasonal norms (e.g., assume 15 degrees as a norm)\n    seasonal_norm \u003d 15.0\n    if temp \u003e seasonal_norm:\n        return \"au dessus des normales de saison\"\n    else:\n        return \"en dessous des normales de saison\"\n\n# Register the function as a Spark UDF\nfrom pyspark.sql.functions import udf\nfrom pyspark.sql.types import StringType\n\ntemp_check_udf \u003d udf(check_temperature, StringType())\n\n# Initialize SparkSession\nspark \u003d SparkSession.builder \\\n    .appName(\"KafkaSparkStreaming\") \\\n    .config(\"spark.sql.streaming.checkpointLocation\", \"/tmp/spark-checkpoints\") \\\n    .getOrCreate()\n\n# Define the schema of the incoming JSON messages\nschema \u003d StructType([\n    StructField(\"temperature\", DoubleType(), True),\n    StructField(\"timestamp\", TimestampType(), True),\n    StructField(\"city\", StringType(), True)\n])\n\n# Read data from Kafka\ndf \u003d spark.readStream \\\n    .format(\"kafka\") \\\n    .option(\"kafka.bootstrap.servers\", \"kafka:9092\") \\\n    .option(\"subscribe\", \"test_topic\") \\\n    .option(\"startingOffsets\", \"latest\") \\\n    .load()\n\n# Parse the value as JSON and extract fields\ndata \u003d df.selectExpr(\"CAST(value AS STRING) as json\") \\\n          .select(from_json(col(\"json\"), schema).alias(\"data\")) \\\n          .select(\"data.*\")\n\n# Add a new column with the temperature check result\nprocessed_data \u003d data.withColumn(\"seasonal_check\", temp_check_udf(col(\"temperature\")))\n\n# Perform windowed aggregation to count messages within time windows\nwindowed_counts \u003d processed_data \\\n    .groupBy(window(col(\"timestamp\"), \"1 minute\"), col(\"seasonal_check\")) \\\n    .count()\n\n# Write the result to the console\nquery \u003d windowed_counts \\\n    .writeStream \\\n    .outputMode(\"update\") \\\n    .format(\"console\") \\\n    .queryName(\"saison_test\") \\\n    .start()",
-      "user": "anonymous",
-      "dateUpdated": "2024-12-10 22:05:04.349",
+      "dateUpdated": "2024-12-10 22:21:41.028",
       "progress": 0,
       "config": {
         "editorSetting": {
@@ -451,36 +214,45 @@
       },
       "results": {
         "code": "SUCCESS",
-        "msg": []
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "Streaming started... Run the following to view data:\nspark.sql(\u0027SELECT * FROM kafka_messages\u0027).show()\n+--------------------------------------------------------------------+\n|message                                                             |\n+--------------------------------------------------------------------+\n|{\"temperature\": 6, \"timestamp\": 1733869304.6797066, \"city\": \"Paris\"}|\n|{\"temperature\": 6, \"timestamp\": 1733869306.9248216, \"city\": \"Paris\"}|\n|{\"temperature\": 6, \"timestamp\": 1733869309.1656349, \"city\": \"Paris\"}|\n+--------------------------------------------------------------------+\n\nStream stopped.\n"
+          }
+        ]
       },
       "apps": [],
-      "runtimeInfos": {},
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            {
+              "jobUrl": "http://namenode:4042/jobs/job?id\u003d8"
+            },
+            {
+              "jobUrl": "http://namenode:4042/jobs/job?id\u003d9"
+            }
+          ],
+          "interpreterSettingId": "spark"
+        }
+      },
       "progressUpdateIntervalMs": 500,
-      "jobName": "paragraph_1733866538639_1283672178",
-      "id": "paragraph_1733866538639_1283672178",
-      "dateCreated": "2024-12-10 21:35:38.639",
-      "dateStarted": "2024-12-10 22:05:04.405",
-      "dateFinished": "2024-12-10 22:05:07.337",
-      "status": "FINISHED"
+      "jobName": "paragraph_1733868877642_670270955",
+      "id": "paragraph_1733868877642_670270955",
+      "dateCreated": "2024-12-10 22:14:37.643",
+      "dateStarted": "2024-12-10 22:21:41.049",
+      "dateFinished": "2024-12-10 22:21:57.972",
+      "status": "ABORT"
     },
     {
-      "text": "%pyspark\nspark.table(\"saison_test\").show()",
+      "text": "%spark.pyspark\n",
       "user": "anonymous",
-      "dateUpdated": "2024-12-10 22:05:27.111",
+      "dateUpdated": "2024-12-10 22:15:24.420",
       "progress": 0,
-      "config": {
-        "colWidth": 12.0,
-        "fontSize": 9.0,
-        "enabled": true,
-        "results": {},
-        "editorSetting": {
-          "language": "scala",
-          "editOnDblClick": false,
-          "completionKey": "TAB",
-          "completionSupport": true
-        },
-        "editorMode": "ace/mode/scala"
-      },
+      "config": {},
       "settings": {
         "params": {},
         "forms": {}
@@ -488,14 +260,14 @@
       "apps": [],
       "runtimeInfos": {},
       "progressUpdateIntervalMs": 500,
-      "jobName": "paragraph_1733867986778_2099863070",
-      "id": "paragraph_1733867986778_2099863070",
-      "dateCreated": "2024-12-10 21:59:46.784",
+      "jobName": "paragraph_1733868924416_1681884607",
+      "id": "paragraph_1733868924416_1681884607",
+      "dateCreated": "2024-12-10 22:15:24.420",
       "status": "READY"
     }
   ],
-  "name": "demo",
-  "id": "2KF8MJHR1",
+  "name": "batch-processing",
+  "id": "2KHF95DAA",
   "defaultInterpreterGroup": "spark",
   "version": "0.11.2",
   "noteParams": {},

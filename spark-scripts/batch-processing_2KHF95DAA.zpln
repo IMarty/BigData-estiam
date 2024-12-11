@@ -33,7 +33,7 @@
     {
       "text": "%pyspark\nweather_data \u003d spark.read.option(\"header\", True).option(\"delimiter\", \";\").csv(\"hdfs://namenode:8020/sample_data/paris_2.csv\")",
       "user": "anonymous",
-      "dateUpdated": "2024-12-10 22:21:22.517",
+      "dateUpdated": "2024-12-11 08:42:03.262",
       "progress": 0,
       "config": {
         "editorSetting": {
@@ -65,7 +65,7 @@
           "group": "spark",
           "values": [
             {
-              "jobUrl": "http://namenode:4042/jobs/job?id\u003d0"
+              "jobUrl": "http://namenode:4042/jobs/job?id\u003d12"
             }
           ],
           "interpreterSettingId": "spark"
@@ -75,8 +75,8 @@
       "jobName": "paragraph_1733868814512_1482366340",
       "id": "paragraph_1733868814512_1482366340",
       "dateCreated": "2024-12-10 22:13:34.513",
-      "dateStarted": "2024-12-10 22:21:22.550",
-      "dateFinished": "2024-12-10 22:21:29.410",
+      "dateStarted": "2024-12-11 08:42:03.295",
+      "dateFinished": "2024-12-11 08:42:05.146",
       "status": "FINISHED"
     },
     {
